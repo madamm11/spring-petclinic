@@ -10,7 +10,7 @@ pipeline {
 		
 		stage('Build2') {
     steps {
-        withMaven(maven: 'maven', mavenSettingsConfig: 'MavenSettingsXML.xml') {
+        withMaven(maven: 'maven', mavenSettingsConfig: 'MavenSettingsXML') {
             bat 'mvn -DskipTests clean package'
         }
     }
