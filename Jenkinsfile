@@ -7,5 +7,13 @@ pipeline {
                 echo 'Hello again'
             }
         }
+		
+		stage('Build') {
+    steps {
+        withMaven(maven: 'maven', mavenSettingsConfig: 'MavenSettingsXML.xml') {
+            bat 'mvn -DskipTests clean package'
+        }
+    }
+}
     }
 }
